@@ -93,6 +93,7 @@ hr {
 .contents {
   padding: 20px;
   min-height: 100px;
+  background-color: white;
 }
 
 #header {
