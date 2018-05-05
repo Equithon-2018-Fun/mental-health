@@ -11,31 +11,35 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
     background-color: #FFAC30;
 
     position: sticky;
+    position: -webkit-sticky;
+
     top: 0;
     width: 100%;
-    height: 60px;
+    height: 75px;
+
+    z-index: 1;
 }
 
 li {
     float: left;
     margin: 0;
-    height: 60px;
+    height: 75px;
 }
 
 #logo {
     display: inline-block;
-    margin: 0;
-    height: 60px;
+    margin: 3px;
+    height: 75px;
 }
 
 li a {
     display: inline-block;
     color: white;
-    padding: 14px 16px;
+    padding: 25px 16px;
     text-align: center;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -58,21 +62,19 @@ li a:active{
     font-size: 30px;
     color: black;
     text-align: center;
-}
-
-ul:after {
-    margin: 0;
+    margin: 10px;
 }
 
 
 /* main part */
 .main{
-    font-family: 'Acme', sans-serif;
-    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     width: 100%;
 }
 
 
+/* welcome */
 #home {
     margin: 0;
     width: 100%;
@@ -81,4 +83,45 @@ ul:after {
     background-color: #c2e6fc;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.welcome {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    padding: 60px 0 0;
+}
+
+/* button */
+.btn {
+    border: 2px solid transparent;
+    background-color: #FFAC30;
+    color: white;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+
+    position: absolute;
+    left: 45%;
+    top: 500px;
+}
+
+.btn:hover {
+    background: #ff9800;
+    color: white;
+}
+
+
+/* features */
+#features {
+    padding: 20px;
+    background: #c2e6fc;
+}
+
+/* about */
+#about {
+    background: #c2e6fc;
+    padding: 20px;
 }
