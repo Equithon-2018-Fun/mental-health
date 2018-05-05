@@ -2,19 +2,17 @@ body {
     margin: 0;
 }
 
-.main{
-    font-family: 'Acme', sans-serif;
-    font-size: 15px;
-    width: 100%;
+p {
+    margin: 0;
 }
 
-
+/* bar */
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: orange;
+    background-color: #FFAC30;
 
     position: sticky;
     top: 0;
@@ -25,11 +23,12 @@ ul {
 li {
     float: left;
     margin: 0;
+    height: 60px;
 }
 
 #logo {
     display: inline-block;
-    margin: 0px;
+    margin: 0;
     height: 60px;
 }
 
@@ -39,9 +38,8 @@ li a {
     padding: 14px 16px;
     text-align: center;
     text-decoration: none;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 25px;
-    font-weight: bold;
 }
 
 /* mouse over */
@@ -56,9 +54,31 @@ li a:active{
 }
 
 .title{
-    font-family: 'Acme', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
-    font-weight: bold;
     color: black;
     text-align: center;
+}
+
+ul:after {
+    margin: 0;
+}
+
+
+/* main part */
+.main{
+    font-family: 'Acme', sans-serif;
+    font-size: 15px;
+    width: 100%;
+}
+
+
+#home {
+    margin: 0;
+    width: 100%;
+    height: 900px;
+    background-image: url("Photos/background.jpg");
+    background-color: #c2e6fc;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
