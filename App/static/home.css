@@ -1,23 +1,65 @@
+body {
+    margin: 0;
+}
+
+.main{
+    font-family: 'Acme', sans-serif;
+    font-size: 15px;
+    width: 100%;
+}
+
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: black;
-    font-family: 'Acme', sans-serif;
-    font-size: 20px;
-}
+    background-color: orange;
 
-a:link{
-    color:white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 8%;
 }
 
 li {
     float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    margin: 0;
 }
 
+#logo {
+    display: inline-block;
+    margin: 1px;
+    width: 58px;
+    height: 51px;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* mouse over */
+li a:hover{
+    background-color: grey;
+}
+
+/* selected link */
+li a:active{
+    color: white;
+    text-decoration: underline;
+}
+
+.title{
+    font-family: 'Acme', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
