@@ -90,10 +90,6 @@ button:hover {
     background-color: #c2e6fc;
 }
 
-button:onclick {
-  background-color: #c2e6fc;
-}
-
 textarea {
   font-family: inherit;
   width: 500px;
