@@ -78,6 +78,22 @@ input[type=submit]:hover {
   background-color: #c2e6fc;
 }
 
+button {
+  border-radius: 5px;
+  background-color: #d3eeff;
+  color: inherit;
+  border: 2px outset #d3eeff;
+  font-family: inherit;
+}
+
+button:hover {
+    background-color: #c2e6fc;
+}
+
+button:onclick {
+  background-color: #c2e6fc;
+}
+
 textarea {
   font-family: inherit;
   width: 500px;
@@ -121,7 +137,7 @@ hr {
 }
 
 #life {
-  border-radius: 0px 0px 20px 20px;
+  /* border-radius: 0px 0px 20px 20px; */
 }
 
 #full {
