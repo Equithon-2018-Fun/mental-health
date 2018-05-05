@@ -8,10 +8,35 @@
   <!-- <link rel="stylesheet" href="../../bootstrap-4.1.1-dist/css/bootstrap.css"> -->
   <link rel="stylesheet" href="./dashboard.css">
   <link href="https://fonts.googleapis.com/css?family=Acme|Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("input[type='radio']").click(function() {
+        var radioValue = $("input[name='options']:checked").val();
+        switch (radioValue) {
+          case "1":
+            $(".message-text").text("A")
+            break;
+          case "2":
+            $(".message-text").text("B")
+            break;
+          case "3":
+            $(".message-text").text("C")
+            break;
+          case "4":
+            $(".message-text").text("D")
+            break;
+          case "5":
+            $(".message-text").text("E")
+            break;
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
-  <div id="full">
+  <div class="full">
     <!-- <div class="tabs">
   <div class="tab">
     <input type="radio" id="tab-4" name="tab-group-2" checked>
@@ -36,37 +61,60 @@
       B
     </div>
   </div> -->
-    <div id="header"></div>
-    <div id="welcome" class="contents ">
+    <div class="header"></div>
+    <div class="welcome">
       <h1 class="title-font">Hello! </h1>
     </div>
-    <div id="input-info" class="contents">
+    <div class="input-info">
       <h3 class="title-font">How was your day?</h3>
       <form>
         <span>Input an achievement: </span>
         <br><br>
         <textarea name="comment" form="usrform" placeholder="Something positive, like winning a competition or an awesome vacation!" cols=3 rows=3></textarea>
         <br><br>
-      <h3 class="title-font">How's your mood compared to last time?</h3>
-        <button type="button" value=""> Not So Good</button>
-        <button type="button" value=""> About the Same</button>
-        <button type="button" value=""> Better!</button>
-        <br>
-        <br>
+        <h3 class="title-font">How's your mood compared to last time you checked in?</h3>
+        <div class="message"><span class="message-text"></div>
+        <div class="btn-group">
+          <label class="btn active">
+          <input type="radio" name="options" id="option1" value="1">
+          <label for="option1">
+            <span class="btn">Worse...</span>
+          </label>
+          </label>
+          <label class="btn">
+          <input type="radio" name="options" id="option2" value="2">
+          <label for="option2">
+            <span class="btn">Meh...</span>
+          </label>
+          </label>
+          <label class="btn">
+          <input type="radio" name="options" id="option3" value="3">
+          <label for="option3">
+            <span class="btn">The same</span>
+          </label>
+          </label>
+          <label class="btn">
+          <input type="radio" name="options" id="option4" value="4"> <label for="option4">
+            <span class=" btn">A bit better!</span>
+          </label>
+          </label>
+          <label class="btn">
+          <input type="radio" name="options" id="option5" value="5"> <label for="option5">
+            <span class=" btn">Way better!</span>
+          </label>
+          </label>
+        </div>
         <br>
         <input type="submit" name="go" value="Submit" />
       </form>
     </div>
-    <div id="life" class="contents">
+    <div class="life" class="contents">
       <h3 class="title-font">Your Life In Review</h3>
       <span>View all the great things that have happened to you!</span>
       <hr>
     </div>
-    <div id="footer"></div>
+    <div class="footer"></div>
   </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
