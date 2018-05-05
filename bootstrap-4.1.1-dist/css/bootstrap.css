@@ -5,14 +5,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
+  --blue: #adebf7;
+  --indigo: #adbef7;
+  --purple: #e4aef9;
   --pink: #e83e8c;
-  --red: #dc3545;
+  --red: #f7adb0;
   --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
+  --yellow: #f7f7ad;
+  --green: #adf7c4;
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
@@ -31,7 +31,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: 'Montserrat', sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -60,7 +60,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -79,6 +79,10 @@ hr {
   overflow: visible;
 }
 
+.title-font {
+  font-family: 'Acme', sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -87,6 +91,34 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+.dark-blue {
+  color:#adbef7;
+}
+
+.light-blue{
+  color: #adebf7;
+}
+
+.purple {
+  color: #e4aef9;
+}
+
+.green {
+  color: #adf7c4;
+}
+
+.red {
+  color: #f7adb0;
+}
+
+.yellow {
+  color: #f7f7ad;
+}
+
+.black {
+  color: #ffffff;
 }
 
 abbr[title],
@@ -5469,7 +5501,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: inherit;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5582,7 +5614,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: inherit;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
