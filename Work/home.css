@@ -1,23 +1,55 @@
+body {
+    margin: 0;
+}
+
+.main{
+    font-family: 'Acme', sans-serif;
+    font-size: 15px;
+    width: 100%;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: black;
-    font-family: 'Acme', sans-serif;
-    font-size: 20px;
-}
 
-a:link{
-    color:white;
+    position: sticky;
+    top: 0;
+    width: 100%;
 }
 
 li {
     float: left;
+}
+
+li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    weight: bond;
 }
 
+/* mouse over */
+li a:hover{
+    background-color: grey;
+}
+
+/* selected link */
+li a:active{
+    color: white;
+    text-decoration: underline;
+}
+
+.title{
+    font-family: 'Acme', sans-serif;
+    font-size: 30px;
+    weight: bond;
+    color: black;
+    text-align: center;
+}
