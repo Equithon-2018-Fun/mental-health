@@ -63,6 +63,30 @@ h1 {
   z-index: 1;
 }
 
+input[type=submit] {
+  border-radius: 5px;
+  background-color: #d3eeff;
+  color: inherit;
+  border: 2px outset #d3eeff;
+  font-family: inherit;
+}
+
+input[type=submit]:hover {
+  background-color: #c2e6fc;
+}
+
+textarea {
+  font-family: inherit;
+  width: 500px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(211, 238, 255, 1), rgba(0, 0, 0, 0));
+  padding: 1px;
+}
+
 .contents {
   padding: 20px;
   min-height: 100px;
@@ -83,7 +107,7 @@ h1 {
   border-radius: 0px 0px 15px 15px;
 }
 
-.hover-content{
+.hover-content {
   transform: scale(1.01);
 }
 
