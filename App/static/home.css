@@ -30,7 +30,7 @@ li {
     height: 75px;
 }
 
-#logo {
+.logo {
     display: inline-block;
     margin: 3px;
     height: 75px;
@@ -60,7 +60,6 @@ li a:active{
 .title{
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
-    color: black;
     text-align: center;
     margin: 10px;
 }
@@ -71,11 +70,12 @@ li a:active{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     width: 100%;
+    color: black;
 }
 
 
 /* welcome */
-#home {
+.homeStyle {
     margin: 0;
     width: 100%;
     height: 900px;
@@ -114,14 +114,16 @@ li a:active{
 }
 
 
-/* features */
-#features {
+/* features & about */
+.featuresStyle, .aboutStyle {
     padding: 20px;
     background: #c2e6fc;
 }
 
-/* about */
-#about {
-    background: #c2e6fc;
-    padding: 20px;
+footer{
+    margin: 0;
+    background-color: black;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
