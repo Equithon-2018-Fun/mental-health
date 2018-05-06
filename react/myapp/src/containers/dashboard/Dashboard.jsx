@@ -23,6 +23,7 @@ class Dashboard extends Component {
         // Get all of users info and update state
         let posts = [];
         const query = db.collection('posts').where('uid', '==', user.uid);
+
         query.get()
           .then(snapshot => {
             snapshot.forEach(doc => {
@@ -39,6 +40,22 @@ class Dashboard extends Component {
           .catch(err => {
             alert('Error: Unable to retrieve users');
             console.log('Err: ', err);
+          });
+
+          // NOTE: hacky? get dynamic real-time updates when backend changes are made
+          query.onSnapshot(querySnapshot => {
+            posts = [];
+            querySnapshot.docs.forEach(doc => {
+              posts.push({id: doc.id, ...doc.data()});
+              this.setState({
+                uid: user.uid,
+                name: user.displayName,
+                photoURL: user.photoURL,
+                posts,
+              });
+            })
+          }, err => {
+            console.log(`Encountered error: ${err}`);
           });
       } else {
         this.props.history.replace('/');
@@ -186,15 +203,17 @@ class Dashboard extends Component {
                 <th><h3>Date Posted</h3></th>
                 <th></th>
               </tr>
-              { posts && _.sortBy(posts, ['createdAt']).map((post, id) => 
-                  <tr key={id}>
-                    <td>{post.message || ''}</td>
-                    <td>{moodMap[post.mood - 1] || ''}</td>
-                    <td>Posted On: {moment(post.createdAt).format("MMM Do YYYY")}</td>
-                    <td className="deleteBtn" onClick={() => this.deletePost(post)}>Remove</td>
-                  </tr>
-                )
-              }  
+              <tbody>
+                { posts && _.sortBy(posts, ['createdAt']).map((post, id) => 
+                    <tr key={id}>
+                      <td>{post.message || ''}</td>
+                      <td>{moodMap[post.mood] || ''}</td>
+                      <td>Posted On: {moment(post.createdAt).format("MMM Do YYYY")}</td>
+                      <td className="deleteBtn" onClick={() => this.deletePost(post)}>Remove</td>
+                    </tr>
+                  )
+                }  
+              </tbody>
             </table>
           </div>
           <div className="footer">
