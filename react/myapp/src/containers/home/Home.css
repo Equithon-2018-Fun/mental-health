@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Acme|Montserrat");
 
-body {
-  margin: 0;
+.body {
+  color:#4098ce;
+  cursor: default;
+  line-height: normal;
 }
 
 p {
@@ -13,8 +15,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: none;
   background-color: #FFAC30;
+  overflow: hidden;
 
   position: sticky;
   position: -webkit-sticky;
@@ -24,6 +26,7 @@ ul {
   height: 75px;
 
   z-index: 1;
+
 }
 
 li {
@@ -35,6 +38,7 @@ li {
 .logo {
   display: inline-block;
   margin: 3px;
+  margin-left:7px;
   height: 75px;
 }
 
@@ -46,23 +50,23 @@ li a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
+  height: 75px;
 }
 
 /* mouse over */
 li a:hover{
-  background-color: grey;
+  background-color: #ff9800;
 }
 
 /* selected link */
 li a:active{
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .title{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Acme', sans-serif;
   font-size: 30px;
-  color: black;
   text-align: center;
   margin: 10px;
 }
@@ -77,11 +81,11 @@ li a:active{
 
 
 /* welcome */
-.home {
+.homeStyle {
   margin: 0;
   width: 100%;
   height: 900px;
-  background-image: url("../Photos/background.jpg");
+  background-image: url("https://i.imgur.com/lD8ldNW.jpg");
   background-color: #c2e6fc;
   background-repeat: no-repeat;
   background-size: cover;
@@ -93,21 +97,24 @@ li a:active{
   font-size: 100px;
   color: white;
   text-align: center;
-  padding: 60px 0 0;
+  padding: 150px 0 0;
+  text-shadow: 1px 2px #000000;
 }
 
 /* button */
 .btn {
   border: 2px solid transparent;
+  border-radius: 5px;
   background-color: #FFAC30;
   color: white;
   padding: 14px 28px;
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
 
   position: absolute;
   left: 45%;
   top: 500px;
+  font-family:inherit;
 }
 
 .btn:hover {
@@ -115,15 +122,46 @@ li a:active{
   color: white;
 }
 
+/* features & about */
+.featuresStyle, .aboutStyle {
+  padding: 10px;
+  background: #c2e6fc;
+  /* border-bottom: 2px solid black; */
+}
 
-/* features */
-.features {
-  padding: 20px;
+.aboutStyle {
+background-color:white;
+}
+
+.moreStyle {
+  padding: 10px;
   background: #c2e6fc;
 }
 
-/* about */
-.about {
-  background: #c2e6fc;
-  padding: 20px;
+.column {
+  float: left;
+  top: 0;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+footer{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #FFAC30;
+  color: white;
+  padding: 10px;
+}
+
+.bolder {
+font-weight:bold;
+}
+
+hr {
+border: 0;
+height: 1px;
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 172, 48), rgba(0, 0, 0, 0));
+padding: 1px;
 }
