@@ -141,6 +141,7 @@ form {
 
 .logout {
   text-decoration: none;
+  color: black;
 }
 
 .logout:hover {
@@ -211,4 +212,8 @@ form {
   border-radius: 5px;
   background-color:#4df28c;
   color:#2cb761;
+}
+
+.postDate {
+  margin-left: 20px;
 }
