@@ -17,6 +17,7 @@ class Home extends Component {
         // On success
         // The signed-in user info.
         const user = result.user;
+        
         // redirect to dashboard page
         this.props.history.push('/dashboard');
       }).catch(error => {

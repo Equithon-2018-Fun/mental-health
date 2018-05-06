@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Acme|Montserrat");
+
 body {
   background-image: url("../Photos/background.jpg");
   background-size: cover;
@@ -9,6 +11,9 @@ body {
 
 .title-font {
   font-family: 'Acme', sans-serif;
+  float: left;
+  color: #4098ce;
+  font-weight: bold;
 }
 
 h1 {
@@ -31,33 +36,12 @@ h1 {
   float: left;
 }
 
-.tab label {
-  background: #eee;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-left: -1px;
-  position: relative;
-  left: 1px;
-  border-radius: 15px 15px 0px 0px;
-}
-
-.tab [type=radio] {
+[type=radio] {
   display: none;
 }
 
-.tab-content {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  background: white;
-  right: 0;
-  bottom: 0;
-  padding: 20px;
-  border: 1px solid #ccc;
-}
-
 [type=radio]:checked~label {
-  background: white;
+  font-weight: bold;
   border-bottom: 1px solid white;
   min-height: 20px;
 }
@@ -66,10 +50,13 @@ h1 {
   z-index: 1;
 }
 
+[type=radio]:hover~label {
+  color: red;
+}
+
 input[type=submit] {
   border-radius: 5px;
   background-color: #d3eeff;
-  color: inherit;
   border: 2px outset #d3eeff;
   font-family: inherit;
 }
@@ -87,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #c2e6fc;
+  background-color: #c2e6fc;
 }
 
 textarea {
@@ -102,7 +89,7 @@ hr {
   padding: 1px;
 }
 
-.contents {
+.welcome {
   padding: 20px;
   min-height: 100px;
   background-color: white;
@@ -117,10 +104,11 @@ hr {
 }
 
 .footer {
-  height: 30px;
-  z-index: -1;
+  height: 40px;
   background-color: #d3eeff;
   border-radius: 0px 0px 15px 15px;
+  text-align: center;
+  line-height: 40px;
 }
 
 .hover-content {
@@ -130,10 +118,14 @@ hr {
 .input-info {
   background-color: #d3eeff;
   position: relative;
+  padding: 20px;
+  min-height: 100px;
 }
 
 .life {
-  /* border-radius: 0px 0px 20px 20px; */
+  padding: 20px;
+  min-height: 100px;
+  background-color: white;
 }
 
 .full {
@@ -147,4 +139,17 @@ hr {
 
 form {
   vertical-align: middle;
+}
+
+.logout {
+  text-decoration: none;
+}
+
+.logout:hover{
+  font-weight:bold;
+}
+
+.message {
+  display: inline-block;
+  padding-right: 550px;
 }
