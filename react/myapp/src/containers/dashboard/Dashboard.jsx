@@ -9,10 +9,10 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      uid: "",
-      name: "",
-      photoURL: "",
-      message: "",
+      uid: '',
+      name: '',
+      photoURL: '',
+      message: '',
       mood: null,
       posts: [],
     };
@@ -26,7 +26,7 @@ class Dashboard extends Component {
         query.get()
           .then(snapshot => {
             snapshot.forEach(doc => {
-              posts.push(doc.data());
+              posts.push({id: doc.id, ...doc.data()});
             });
 
             this.setState({
@@ -45,7 +45,7 @@ class Dashboard extends Component {
       }
     });
 
-    _.bindAll(this, 'textChange', 'submit', 'moodHandler');
+    _.bindAll(this, 'textChange', 'submit', 'moodHandler', 'deletePost');
   }
 
   textChange(event) {
@@ -63,7 +63,8 @@ class Dashboard extends Component {
       createdAt: Date.now(),
     }).then(ref => {
       this.setState({
-        message: "",
+        message: '',
+        mood: null,
       })
       console.log('Added document with ID: ', ref.id);
     });
@@ -81,6 +82,22 @@ class Dashboard extends Component {
     this.setState({
       mood: event.target.value,
     });
+  }
+
+  deletePost(post) {
+    console.log('post', post.id);
+    db.collection('posts').doc(post.id).delete()
+      .then(() => {
+        const posts = this.state.posts;
+        _.remove(posts, p => p.id == post.id);
+        this.setState({
+          posts,
+        });
+      })
+      .catch(err => {
+        console.log('Err: ', err);
+      });
+
   }
 
   render() {
@@ -128,29 +145,29 @@ class Dashboard extends Component {
               <div className="btn-group">
                 <label className="btn1">
                 <input type="radio" name="options" id="option1" value="0" onClick={this.moodHandler}/>
-                <label for="option1">
+                <label htmlFor="option1">
                   <span>Worse...</span>
                 </label>
                 </label>
                 <label className="btn2">
                 <input type="radio" name="options" id="option2" value="1" onClick={this.moodHandler}/>
-                <label for="option2">
+                <label htmlFor="option2">
                   <span>Meh...</span>
                 </label>
                 </label>
                 <label className="btn3">
                 <input type="radio" name="options" id="option3" value="2" onClick={this.moodHandler}/>
-                <label for="option3">
+                <label htmlFor="option3">
                   <span>The same.</span>
                 </label>
                 </label>
                 <label className="btn4">
-                <input type="radio" name="options" id="option4" value="3" onClick={this.moodHandler}/> <label for="option4">
-                  <span class>A bit better!</span>
+                <input type="radio" name="options" id="option4" value="3" onClick={this.moodHandler}/> <label htmlFor="option4">
+                  <span>A bit better!</span>
                 </label>
                 </label>
                 <label className="btn5">
-                <input type="radio" name="options" id="option5" value="4" onClick={this.moodHandler}/> <label for="option5">
+                <input type="radio" name="options" id="option5" value="4" onClick={this.moodHandler}/> <label htmlFor="option5">
                   <span>Way better!</span>
                 </label>
                 </label>
@@ -167,6 +184,7 @@ class Dashboard extends Component {
                 <span className="messages">{post.message}</span>
                 <span className="moods">{moodMap[post.mood - 1]}</span>
                 <span className="postDate">Posted On: {moment(post.createdAt).format("MMM Do YYYY")} </span>
+                <span className="deleteBtn" onClick={() => this.deletePost(post)}>Remove</span>
               </div>
               )
             }  

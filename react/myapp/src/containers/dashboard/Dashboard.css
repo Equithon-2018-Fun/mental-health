@@ -217,3 +217,8 @@ form {
 .postDate {
   margin-left: 20px;
 }
+
+.deleteBtn {
+  cursor: pointer;
+  color: red;
+}
