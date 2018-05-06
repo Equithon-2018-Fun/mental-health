@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    color:#4098ce;
+    cursor:default;
 }
 
 p {
@@ -34,6 +36,7 @@ li {
 .logo {
     display: inline-block;
     margin: 3px;
+    margin-left:7px;
     height: 75px;
 }
 
@@ -50,17 +53,17 @@ li a {
 
 /* mouse over */
 li a:hover{
-    background-color: grey;
+    background-color: #ff9800;
 }
 
 /* selected link */
 li a:active{
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .title{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Acme', sans-serif;
     font-size: 30px;
     text-align: center;
     margin: 10px;
@@ -72,7 +75,6 @@ li a:active{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     width: 100%;
-    color: black;
 }
 
 
@@ -94,20 +96,23 @@ li a:active{
     color: white;
     text-align: center;
     padding: 150px 0 0;
+    text-shadow: 1px 2px #000000;
 }
 
 /* button */
 .btn {
     border: 2px solid transparent;
+    border-radius: 5px;
     background-color: #FFAC30;
     color: white;
     padding: 14px 28px;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
 
     position: absolute;
     left: 45%;
     top: 500px;
+    font-family:inherit;
 }
 
 .btn:hover {
@@ -115,12 +120,15 @@ li a:active{
     color: white;
 }
 
-
 /* features & about */
 .featuresStyle, .aboutStyle {
     padding: 10px;
     background: #c2e6fc;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
+}
+
+.aboutStyle {
+  background-color:white;
 }
 
 .moreStyle {
@@ -140,8 +148,18 @@ li a:active{
 footer{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    background-color: black;
+    background-color: #FFAC30;
     color: white;
     padding: 10px;
 }
 
+.bolder {
+  font-weight:bold;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 172, 48), rgba(0, 0, 0, 0));
+  padding: 1px;
+}
