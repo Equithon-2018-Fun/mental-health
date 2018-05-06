@@ -1,3 +1,3 @@
-Email Month Report 
+Email Month Reflection
 
 Get a customized, email report sent to you every month! It contains a graph tracking your highs and lows in mood throughout the month, as well as selecting different photos and text entries to showcase to you from the month. 
