@@ -2,23 +2,43 @@ import React, { Component } from 'react';
 import firebase from 'firebase';
 import { db } from '../../firebase';
 import _ from 'lodash';
+import moment from 'moment';
 import './Dashboard.css';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
+      uid: "",
+      name: "",
       message: "",
       mood: null,
+      posts: [],
     };
 
     // Check if user is signed in or not
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        this.setState({
-          user: user.uid,
-        });
+        // Get all of users info and update state
+        let posts = [];
+        const query = db.collection('posts').where('uid', '==', user.uid);
+        query.get()
+          .then(snapshot => {
+            snapshot.forEach(doc => {
+              posts.push(doc.data());
+            });
+
+            this.setState({
+              uid: user.uid,
+              name: user.displayName,
+              posts,
+            });
+            console.log(this.state.posts);
+          })
+          .catch(err => {
+            alert('Error: Unable to retrieve users');
+            console.log('Err: ', err);
+          });
       } else {
         this.props.history.replace('/');
       }
@@ -26,12 +46,13 @@ class Dashboard extends Component {
 
     _.bindAll(this, 'handleSubmit', 'textChange', 'submit');
   }
-  
+
   submit() {
     db.collection('posts').add({
-      user: this.state.user,
+      uid: this.state.uid,
       message: this.state.message,
       mood: 0,
+      createdAt: Date.now(),
     }).then(ref => {
       console.log('Added document with ID: ', ref.id);
     });
@@ -55,12 +76,23 @@ class Dashboard extends Component {
     console.log(this.state.message);
   }
 
+  signout() {
+    firebase.auth().signOut().then(() => {
+      this.props.history.replace('/');
+    }).catch(err => {
+      console.log('Err: ', err);
+    });
+  }
+
   render() {
+    const { posts } = this.state;
+    console.log(posts);
+
     return (
       <div className="full">
         <div className="header"></div>
         <div className="welcome">
-          <h1 className="title-font">Hello! </h1>
+          <h1 className="title-font">Hello {this.state.name}! </h1>
         </div>
         <div className="input-info">
           <h3 className="title-font">How was your day?</h3>
@@ -124,13 +156,21 @@ class Dashboard extends Component {
             <br/>
             <input type="submit" name="go" value="Submit" />
           </form> */}
+
+          
+          {/* Note: Where information is past information is presented */}
+          { posts && posts.map((post, id) => 
+            <div key={id}>
+              <span>{post.message}</span>
+              <span>{post.mood}</span>
+              <span>Posted On: {moment(post.createdAt).format("MMM Do YY")} </span>
+              <span></span>
+            </div>
+            )
+          }  
         </div>
-        <div className="life" className="contents">
-          <h3 className="title-font">Your Life In Review</h3>
-          <span>View all the great things that have happened to you!</span>
-          <hr/>
-        </div>
-        <div className="footer"><a href="#" className="logout">Logout</a></div>
+        
+        <div className="footer"><a onClick={this.signout} className="logout">Logout</a></div>
       </div>
     );
   }

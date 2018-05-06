@@ -4,9 +4,18 @@ import { db } from '../../firebase';
 import './Home.css';
 
 class Home extends Component {
+  componentWillMount() {
+    // NOTE: hacky
+    // Check if user is signed in or not
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.props.history.replace('/dashboard');
+      }
+    });
+  }
+
   constructor(props) {
     super(props);
-
     this.googleLogin = this.googleLogin.bind(this);
   }
 
