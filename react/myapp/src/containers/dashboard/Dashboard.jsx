@@ -11,6 +11,7 @@ class Dashboard extends Component {
     this.state = {
       uid: "",
       name: "",
+      photoURL: "",
       message: "",
       mood: null,
       posts: [],
@@ -31,6 +32,7 @@ class Dashboard extends Component {
             this.setState({
               uid: user.uid,
               name: user.displayName,
+              photoURL: user.photoURL,
               posts,
             });
             console.log(this.state.posts);
@@ -44,7 +46,14 @@ class Dashboard extends Component {
       }
     });
 
-    _.bindAll(this, 'handleSubmit', 'textChange', 'submit');
+    _.bindAll(this, 'textChange', 'submit');
+  }
+
+  textChange(event) {
+    this.setState({
+      message: event.target.value,
+    });
+    console.log(this.state.message);
   }
 
   submit() {
@@ -56,24 +65,6 @@ class Dashboard extends Component {
     }).then(ref => {
       console.log('Added document with ID: ', ref.id);
     });
-  }
-  
-  handleSubmit(event) {
-    console.log(event);
-    // db.collection('posts').add({
-    //   message: this.state.message,
-    //   mood: this.state.mood,
-    // }).then(ref => {
-    //   console.log('Added document with ID: ', ref.id);
-    // });
-  }
-
-
-  textChange(event) {
-    this.setState({
-      message: event.target.value,
-    });
-    console.log(this.state.message);
   }
 
   signout() {
@@ -92,6 +83,7 @@ class Dashboard extends Component {
       <div className="full">
         <div className="header"></div>
         <div className="welcome">
+          <img src={this.state.photoURL} alt="Profile picture" />
           <h1 className="title-font">Hello {this.state.name}! </h1>
         </div>
         <div className="input-info">
