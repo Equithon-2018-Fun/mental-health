@@ -45,19 +45,19 @@ class Home extends Component {
         </ul>
 
         <div className="main">
-            <div className="home">
+            <div id="home" className="home">
                 <p className="welcome">Welcome to iSteem!</p>
                 <button className="btn" type="button">Get Started</button>
             </div>
 
-            <div className="features">
+            <div id="features" className="features">
                 <p className="title">Features</p>
                 <p>Relative Mood Ratings:<br/>These mood ratings are always relative to how you were feeling the last time you checked in. This way, you can gain a better understanding of your moods over time.<br/>
                     <br/>Accomplishments:<br/>Put in any accomplishment or small thing that went well everyday! These will show up afterwards so you can have a nice trip down memory lane.
                 </p>
             </div>
 
-            <div className="about">
+            <div id="about" className="about">
                 <p className="title">About Us</p>
                 <p>iSteem is a platform that specficially does not allow for sharing of content. Everything that you put on here, is only for you to see.<br/><br/>
                     The biggest problem facing us today is that everything is always in comparison to others. Something great happened in your life,
