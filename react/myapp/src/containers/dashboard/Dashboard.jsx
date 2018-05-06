@@ -80,89 +80,75 @@ class Dashboard extends Component {
     console.log(posts);
 
     return (
-      <div className="full">
-        <div className="header"></div>
-        <div className="welcome">
-          <img src={this.state.photoURL} alt="Profile picture" />
-          <h1 className="title-font">Hello {this.state.name}! </h1>
-        </div>
-        <div className="input-info">
-          <h3 className="title-font">How was your day?</h3>
-          <textarea
-            placeholder="Something positive, like winning a competition or an awesome vacation!"
-            cols={3}
-            rows={3}
-            value={this.state.message}
-            onChange={this.textChange}
-          />
-          <button onClick={this.submit}>Submit</button>
-
-          {/* <form onSubmit={this.handleSubmit}>
-            <span>Input an achievement: </span>
-            <br/><br/>
-            <textarea
-              name="comment"
-              form="usrform"
-              placeholder="Something positive, like winning a competition or an awesome vacation!"
-              cols={3}
-              rows={3}
-              value={this.state.message}
-              onChange={this.textChange}
-            >
-            </textarea>
+      <div className="body">
+        <div className="full">
+          <div className="header"></div>
+          <div className="welcome_header">
+            <h1 className="title-font">Hello! </h1>
+            <span>Welcome to your iSteem Dashboard! Here you can see all your great memories, and add new ones!</span>
             <br/>
-            <h3 className="title-font">How is your mood compared to last time you checked in?</h3>
-            <div className="message"><span className="message-text" /></div>
-            <div className="btn-group">
-              <label className="btn active">
-              <input type="radio" name="options" id="option1" value="1" />
-              <label for="option1">
-                <span className="btn">Worse...</span>
-              </label>
-              </label>
-              <label className="btn">
-              <input type="radio" name="options" id="option2" value="2" />
-              <label for="option2">
-                <span className="btn">Meh...</span>
-              </label>
-              </label>
-              <label className="btn">
-              <input type="radio" name="options" id="option3" value="3" />
+            <hr/>
+            <span>Try to find something good to add to iSteem every day, even when it seems grim. It's important to remember that everyday can be a great day, and that even when you feel down, tomorrow is a new slate ♥</span>
+          </div>
+          <div className="input-info">
+            <h1 className="title-font">How are you? </h1>
+            
+              <h3 className="title-font">Input an achievement: </h3>
+              <span>Something positive or a good memory that you want to remember! It can be anything; this is your life! </span>
+              <br/>
+              <br/>
+              <textarea
+                name="comment"
+                placeholder="Winning a competition, going on vacation, etc..."
+                cols={3}
+                rows={3}
+              />
+              <h3 className="title-font">How is your mood compared to last time you checked in?</h3>
+              <div className="message"><span className="message-text"></span></div>
+              <div className="btn-group">
+                <label className="btn1">
+                <input type="radio" name="options" id="option1" value="1"/>
+                <label for="option1">
+                  <span>Worse...</span>
+                </label>
+                </label>
+                <label className="btn2">
+                <input type="radio" name="options" id="option2" value="2"/>
+                <label for="option2">
+                  <span>Meh...</span>
+                </label>
+                </label>
+                <label className="btn3">
+                <input type="radio" name="options" id="option3" value="3"/>
                 <label for="option3">
-                  <span className="btn">The same</span>
+                  <span>The same.</span>
                 </label>
-              </label>
-              <label className="btn">
-                <input type="radio" name="options" id="option4" value="4" />
-                <label for="option4">
-                  <span className="btn">A bit better!</span>
                 </label>
-              </label>
-              <label className="btn">
-                <input type="radio" name="options" id="option5" value="5" />
-                <label for="option5">
-                  <span className=" btn">Way better!</span>
+                <label className="btn4">
+                <input type="radio" name="options" id="option4" value="4"/> <label for="option4">
+                  <span class>A bit better!</span>
                 </label>
-              </label>
-            </div>
-            <br/>
-            <input type="submit" name="go" value="Submit" />
-          </form> */}
-
-          
-          {/* Note: Where information is past information is presented */}
-          { posts && posts.map((post, id) => 
-            <div key={id}>
-              <span>{post.message}</span>
-              <span>{post.mood}</span>
-              <span>Posted On: {moment(post.createdAt).format("MMM Do YY")} </span>
-              <span></span>
-            </div>
-            )
-          }  
+                </label>
+                <label className="btn5">
+                <input type="radio" name="options" id="option5" value="5"/> <label for="option5">
+                  <span>Way better!</span>
+                </label>
+                </label>
+              </div>
+              <br/>
+              <input type="submit" name="go" value="Add to Profile" />
+          </div>
+          <div className="life">
+            <h1 className="title-font">Your Life In Review</h1>
+            <span>View all the great things that have happened to you!</span>
+            <hr/>
+            <span className="messages">nWOENinfwdfnwEONFONIFOEWNDONEODNOQndoQNDOQNODQodienfiwOEFNIO</span>
+            <span className="moods">rjfowJIEFJWofnwNWqndwqndnwqdnlqNWDLNQWldnlonfwnfionfenwfwaflwefnlwfknkl</span>
+          </div>
+          <div className="footer">
+            <a href="#" className="logout">Logout</a>
+          </div>
         </div>
-        
-        <div className="footer"><a onClick={this.signout} className="logout">Logout</a></div>
       </div>
     );
   }
