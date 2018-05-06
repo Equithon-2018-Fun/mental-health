@@ -2,36 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>iEsteem</title>
+    <title>iSteem</title>
     <link rel="stylesheet" type="text/css" href="home.css" />
     <link href="https://fonts.googleapis.com/css?family=Acme|Montserrat" rel="stylesheet">
 </head>
 
 <body>
-    <ul id="bar">
-        <li><img id="logo" src="Photos/NewLogo.png" alt="logo"></li>
+    <ul class="bar">
+        <li><img class="logo" src="https://i.imgur.com/vnyfMiF.png" alt="logo"></li>
         <li><a href="#home">Home</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#more">Future</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li style="float:right"><a href="https://accounts.google.com/ServiceLogin">Login</a></li>
     </ul>
 
     <div class="main">
-        <div id="home">
+        <div id="home" class="homeStyle">
             <p class="welcome">Welcome to iSteem!<p>
             <button class="btn" type="button">Get Started</button>
         </div>
 
-        <div id="features">
+        <div id="features" class="featuresStyle" style="padding: 70px">
             <p class="title">Features</p>
-            <p>Relative Mood Ratings:<br>These mood ratings are always relative to how you were feeling the last time you checked in. This way, you can gain a better understanding of your moods over time.<br>
+            <p style="padding-top: 30px">Relative Mood Ratings:<br>These mood ratings are always relative to how you were feeling the last time you checked in. This way, you can gain a better understanding of your moods over time.<br>
                 <br>Accomplishments:<br>Put in any accomplishment or small thing that went well everyday! These will show up afterwards so you can have a nice trip down memory lane.
             </p>
         </div>
 
-        <div id="about">
+        <div id="about" class="aboutStyle" style="padding: 70px">
             <p class="title">About Us</p>
-            <p>iSteem is a platform that specficially does not allow for sharing of content. Everything that you put on here, is only for you to see.<br><br>
+            <p style="padding-top: 30px">iSteem is a platform that specifically does not allow for sharing of content. Everything that you put on here, is only for you to see.<br><br>
                 The biggest problem facing us today is that everything is always in comparison to others. Something great happened in your life,
                 but you look on social media and it seems that someone else has done something even better.
                 This perpetual cycle of comparison is what leads to poor self-esteem, and a lack of worth.<br><br>
@@ -40,7 +42,26 @@
                 We hope that through iSteem, you'll be able to learn to see things from a greater perspective,
                 and appreciate all the amazing things that you do everyday in your life. </p>
         </div>
+
+        <div id="more" class="moreStyle">
+                <p class="title">More Features On the Way</p>
+                <div class="clearfix" style="margin: 20px 100px; height: 500px">
+                    <img src="https://i.imgur.com/HWF1N4Q.png" alt="monthly reflection" width="300px" height="450px" style="float: left; margin: 20px;">
+                    <p class="title" style="padding: 40px 20px 0px 390px">Email Month Reflection</p>
+                    <p style="padding-left: 100px; padding-right: 20px; overflow: auto">
+                        <br><br>Get a customized, email report sent to you every month!<br><br>
+                        It contains a graph tracking your highs and lows in mood throughout the month,
+                        as well as selecting different photos and text entries to showcase to you from the month.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <footer id="contact">
+        <p class="title">Contact Us</p>
+        <p style="text-align: center">Any questions? Any ideas? Email us at support@isteerm.ca!<br></p>
+    </footer>
 
 </body>
 </html>
