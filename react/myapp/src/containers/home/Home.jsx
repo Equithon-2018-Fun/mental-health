@@ -60,8 +60,8 @@ class Home extends Component {
 
         <div className="main">
           <div id="home" className="homeStyle">
-            <p className="welcome">Welcome to iSteem!</p>
-            <button className="btn" onClick={this.googleLogin}>Get Started</button>
+            <p className={'welcome' + ' fade-animation'}>Welcome to iSteem!</p>
+            <button className={'btn' + ' fade-animation'} onClick={this.googleLogin}>Get Started</button>
           </div>
           <div id="features" className="featuresStyle" style={{padding: '70px'}}>
             <p className="title">Features</p>
@@ -96,7 +96,7 @@ class Home extends Component {
 
         <footer id="contact">
           <p className="title">Contact Us</p>
-          <p style={{textAlign: 'center'}}>Any questions? Any ideas? Email us at support@isteerm.ca!<br/></p>
+          <p style={{textAlign: 'center'}}>Any questions? Any ideas? Email us at support@isteem.ca!<br/></p>
         </footer>
       </div>
     );

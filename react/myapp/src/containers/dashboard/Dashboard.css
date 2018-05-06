@@ -7,7 +7,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px !important;
   color: #4098ce;
-  line-height: 1.5em;
+  line-height: 1.6;
   cursor:default;
 }
 
@@ -219,17 +219,13 @@ form {
   max-width: 500px;
 }
 
-.postContainer {
-  display: flex;
-  background-color:white;
-}
-.postMessage {
-  flex: 0 0 150px;
+.deleteCol {
+  /* width: 60px; */
 }
 
-.post {
-  flex: 1 1 auto;
-  text-align: center;
+.postMessageCol {
+  word-wrap: break-word;
+  width: 350px;
 }
 
 .deleteBtn {

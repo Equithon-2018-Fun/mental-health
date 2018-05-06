@@ -179,15 +179,23 @@ class Dashboard extends Component {
             <h1 className="title-font">Your Life In Review</h1>
             <span>View all the great things that have happened to you!</span>
             <hr/>
-            { posts && _.sortBy(posts, ['createdAt']).map((post, id) => 
-              <div key={id} className="postContainer">
-                <span className="postMessage">{post.message}</span>
-                <span className="post">{moodMap[post.mood - 1]}</span>
-                <span className="post">Posted On: {moment(post.createdAt).format("MMM Do YYYY")} </span>
-                <span className={'deleteBtn' + ' post'} onClick={() => this.deletePost(post)}>Remove</span>
-              </div>
-              )
-            }  
+            <table style={{width: '100%', textAlign: 'center'}}>
+              <tr>
+                <th className="postMessageCol"><h3>Message</h3></th>
+                <th><h3>Last Mood</h3></th>
+                <th><h3>Date Posted</h3></th>
+                <th></th>
+              </tr>
+              { posts && _.sortBy(posts, ['createdAt']).map((post, id) => 
+                  <tr key={id}>
+                    <td>{post.message || ''}</td>
+                    <td>{moodMap[post.mood - 1] || ''}</td>
+                    <td>Posted On: {moment(post.createdAt).format("MMM Do YYYY")}</td>
+                    <td className="deleteBtn" onClick={() => this.deletePost(post)}>Remove</td>
+                  </tr>
+                )
+              }  
+            </table>
           </div>
           <div className="footer">
             <a onClick={this.signout} className="logout">Logout</a>

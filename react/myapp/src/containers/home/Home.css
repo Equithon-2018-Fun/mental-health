@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Acme|Montserrat");
 
+/* NOTE: Hacky styles */
 .body {
   color:#4098ce;
   cursor: default;
-  line-height: normal;
+  /* line-height: 1.6; */
 }
 
 p {
@@ -156,12 +157,22 @@ footer{
 }
 
 .bolder {
-font-weight:bold;
+  font-weight:bold;
 }
 
 hr {
-border: 0;
-height: 1px;
-background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 172, 48), rgba(0, 0, 0, 0));
-padding: 1px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 172, 48), rgba(0, 0, 0, 0));
+  padding: 1px;
 }
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-animation {
+  animation: fadein 3s;
+}
+
