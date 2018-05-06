@@ -120,12 +120,6 @@ hr {
   min-height: 100px;
 }
 
-.life {
-  padding: 20px;
-  min-height: 100px;
-  background-color: white;
-  overflow:hidden;
-}
 
 .full {
   margin: 20px;
@@ -153,15 +147,6 @@ form {
   float: right;
   display: inline-block;
   padding-right: 550px;
-}
-
-.messages {
-  background-color:white;
-  float:left;
-  display:block;
-  word-wrap:break-word;
-  margin:0px 20px;
-  max-width: 500px;
 }
 
 .btn1 {
@@ -218,7 +203,37 @@ form {
   margin-left: 20px;
 }
 
+.life {
+  padding: 20px;
+  min-height: 100px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.messages {
+  background-color:white;
+  float:left;
+  display:block;
+  word-wrap:break-word;
+  margin:0px 20px;
+  max-width: 500px;
+}
+
+.postContainer {
+  display: flex;
+  background-color:white;
+}
+.postMessage {
+  flex: 0 0 150px;
+}
+
+.post {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
 .deleteBtn {
+  margin-right: auto;
   cursor: pointer;
   color: red;
 }

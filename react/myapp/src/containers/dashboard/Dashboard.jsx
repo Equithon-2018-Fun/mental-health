@@ -180,11 +180,11 @@ class Dashboard extends Component {
             <span>View all the great things that have happened to you!</span>
             <hr/>
             { posts && _.sortBy(posts, ['createdAt']).map((post, id) => 
-              <div key={id}>
-                <span className="messages">{post.message}</span>
-                <span className="moods">{moodMap[post.mood - 1]}</span>
-                <span className="postDate">Posted On: {moment(post.createdAt).format("MMM Do YYYY")} </span>
-                <span className="deleteBtn" onClick={() => this.deletePost(post)}>Remove</span>
+              <div key={id} className="postContainer">
+                <span className="postMessage">{post.message}</span>
+                <span className="post">{moodMap[post.mood - 1]}</span>
+                <span className="post">Posted On: {moment(post.createdAt).format("MMM Do YYYY")} </span>
+                <span className={'deleteBtn' + ' post'} onClick={() => this.deletePost(post)}>Remove</span>
               </div>
               )
             }  
