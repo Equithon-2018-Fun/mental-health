@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { db } from '../../firebase';
 import './Dashboard.css';
 
 class Dashboard extends Component {
+
   render() {
-    
     return (
       <div className="full">
         <div className="header"></div>
