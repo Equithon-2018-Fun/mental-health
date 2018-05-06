@@ -11,8 +11,8 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: auto;
     background-color: #FFAC30;
+    overflow: hidden;
 
     position: sticky;
     position: -webkit-sticky;
@@ -22,6 +22,7 @@ ul {
     height: 75px;
 
     z-index: 1;
+
 }
 
 li {
@@ -44,6 +45,7 @@ li a {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
+    height: 75px;
 }
 
 /* mouse over */
@@ -91,7 +93,7 @@ li a:active{
     font-size: 100px;
     color: white;
     text-align: center;
-    padding: 60px 0 0;
+    padding: 150px 0 0;
 }
 
 /* button */
@@ -116,11 +118,19 @@ li a:active{
 
 /* features & about */
 .featuresStyle, .aboutStyle {
-    padding: 20px;
+    padding: 10px;
     background: #c2e6fc;
+    border-top: 2px solid black;
+}
+
+.featuresStyle, .aboutStyle {
+    padding: 10px;
+    background: #c2e6fc;
+    border-top: 2px solid black;
 }
 
 footer{
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     background-color: black;
     color: white;
